@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="com/company/pandora/screens.xml"/>
+    <screen id="pandora$Patient.browse"
+            template="com/company/pandora/web/patient/patient-browse.xml"/>
+    <screen id="pandora$Patient.edit"
+            template="com/company/pandora/web/patient/patient-edit.xml"/>
+    <screen id="pandora$Surgery.browse"
+            template="com/company/pandora/web/surgery/surgery-browse.xml"/>
+</screen-config>

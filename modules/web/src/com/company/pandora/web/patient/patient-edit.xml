@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.pandora.web.patient.PatientEdit"
+        datasource="patientDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.pandora.web.patient">
+    <dsContext>
+        <datasource id="patientDs"
+                    class="com.company.pandora.entity.Patient"
+                    view="patientFullViewe">
+            <datasource id="diagnosDs"
+                        property="diagnos"/>
+            <datasource id="treatmentDs"
+                        property="treatment">
+                <datasource id="ear_ratingDs"
+                            property="ear_rating"/>
+            </datasource>
+            <datasource id="therapyDs"
+                        property="therapy">
+                <datasource id="protocolDs"
+                            property="protocol"/>
+                <datasource id="tc99_scintigraphyDs"
+                            property="tc99_scintigraphy"/>
+                <datasource id="myelogramDs"
+                            property="myelogram"/>
+            </datasource>
+            <datasource id="eventDs"
+                        property="event">
+                <datasource id="relapseDs"
+                            property="relapse"/>
+            </datasource>
+            <datasource id="surgeryDs"
+                        property="surgery"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true">
+        <scrollBox id="windowActions_scrollBox"
+                   height="100%">
+            <fieldGroup id="fieldGroup"
+                        datasource="patientDs">
+                <column width="250px">
+                    <field property="patient_family_name"/>
+                    <field property="patient_given_name"/>
+                    <field property="patient_patronymic"/>
+                    <field property="patient_sex"/>
+                    <field property="patient_birthdate"/>
+                    <field property="fnkc_request_date"/>
+                    <field property="hospitalization_fnkc"/>
+                    <field property="address"/>
+                </column>
+            </fieldGroup>
+            <tabSheet height="500px">
+                <tab id="diagnos"
+                     caption="msg://diagnoses"
+                     margin="true,false,false,false"
+                     spacing="true">
+                    <scrollBox>
+                        <fieldGroup id="diagnosTable"
+                                    datasource="diagnosDs"
+                                    width="100%">
+                            <column width="400px">
+                                <field id="diagnosis"
+                                       property="diagnosis"
+                                       rows="5"/>
+                                <field id="tumorType"
+                                       property="tumorType"/>
+                                <field id="hepar_parts"
+                                       property="hepar_parts"/>
+                                <field id="additional_diagnosis"
+                                       property="additional_diagnosis"/>
+                                <field id="pretext_stage"
+                                       property="pretext_stage"/>
+                                <field id="speigelian_lobe_affect"
+                                       property="speigelian_lobe_affect"/>
+                                <field id="hepar_out_expansion"
+                                       property="hepar_out_expansion"/>
+                                <field id="focal"
+                                       property="focal"/>
+                                <field id="tumor_explosion"
+                                       property="tumor_explosion"/>
+                                <field id="remote_metastasis"
+                                       property="remote_metastasis"/>
+                                <field id="lymph_nodes_affect"
+                                       property="lymph_nodes_affect"/>
+                                <field id="portal_vein_involve"
+                                       property="portal_vein_involve"/>
+                                <field id="hepar_vein_involve"
+                                       property="hepar_vein_involve"/>
+                            </column>
+                            <column>
+                                <field id="first_clinical_marks_date"
+                                       property="first_clinical_marks_date"/>
+                                <field id="first_clinical_symtoms"
+                                       property="first_clinical_symtoms"/>
+                                <field id="weight_at_birth"
+                                       property="weight_at_birth"/>
+                                <field id="risk_group_initial"
+                                       property="risk_group_initial"/>
+                                <field id="risk_group_final"
+                                       property="risk_group_final"/>
+                                <field id="mkb_10"
+                                       property="mkb_10"/>
+                            </column>
+                        </fieldGroup>
+                    </scrollBox>
+                </tab>
+                <tab id="therapy"
+                     caption="msg://therapy"
+                     margin="true,false,false,false"
+                     spacing="true">
+                    <hbox>
+                        <vbox spacing="true">
+                            <fieldGroup id="therapyFieldGroup"
+                                        datasource="therapyDs"
+                                        height="100%"
+                                        width="100%">
+                                <column width="250px">
+                                    <field property="therapy_start_date"/>
+                                    <field property="afp_initial"/>
+                                    <field property="hystological_type"/>
+                                    <field property="kt_first_tumor"/>
+                                    <field property="tumor_size"/>
+                                    <field property="initial_tumor_size"/>
+                                    <field property="mrt_initial_tumor"/>
+                                    <field property="lungs_kt"/>
+                                    <field property="operation_date"/>
+                                    <field property="post_text_stage"/>
+                                </column>
+                            </fieldGroup>
+                        </vbox>
+                        <vbox margin="false,false,false,true"
+                              spacing="true">
+                            <fieldGroup id="myelogramFieldGroup"
+                                        align="TOP_RIGHT"
+                                        datasource="myelogramDs"
+                                        width="100%">
+                                <column width="250px">
+                                    <field property="value"
+                                           rows="3"/>
+                                </column>
+                            </fieldGroup>
+                            <fieldGroup id="tc99_scintigraphyFieldGroup"
+                                        align="TOP_RIGHT"
+                                        datasource="tc99_scintigraphyDs"
+                                        width="100%">
+                                <column width="250px">
+                                    <field property="value"
+                                           rows="3"/>
+                                </column>
+                            </fieldGroup>
+                            <fieldGroup id="protocolFieldGroup"
+                                        align="TOP_RIGHT"
+                                        datasource="protocolDs"
+                                        height="100%"
+                                        width="100%">
+                                <column width="250px">
+                                    <field property="value"
+                                           rows="3"/>
+                                </column>
+                            </fieldGroup>
+                        </vbox>
+                    </hbox>
+                </tab>
+                <tab id="surgery"
+                     caption="msg://surgery"
+                     margin="true,false,false,false"
+                     spacing="true">
+                    <fieldGroup id="surgeryFieldGroup"
+                                datasource="surgeryDs"
+                                height="100%">
+                        <column width="250px">
+                            <field property="operation_name"/>
+                            <field property="operation_influence"/>
+                            <field property="affect"/>
+                            <field property="address"/>
+                            <field property="histology_after_operation"/>
+                            <field property="treatment_patomorphism"/>
+                        </column>
+                    </fieldGroup>
+                </tab>
+                <tab id="event"
+                     caption="msg://evnet"
+                     margin="true,false,false,false"
+                     spacing="true">
+                    <fieldGroup id="eventFieldGroup"
+                                datasource="eventDs"
+                                height="100%">
+                        <column width="250px">
+                            <field property="event"/>
+                            <field property="date"/>
+                            <field property="status_last_seen"/>
+                            <field property="info_source"/>
+                            <field property="comments"/>
+                            <field property="possible_effects"/>
+                        </column>
+                    </fieldGroup>
+                </tab>
+                <tab id="treatmentRating"
+                     caption="msg://treatmentRating"
+                     margin="true,false,false,false"
+                     spacing="true">
+                    <fieldGroup id="treatmentFieldGroup"
+                                datasource="treatmentDs"
+                                height="100%">
+                        <column width="250px">
+                            <field property="ear_rating_method"/>
+                            <field property="afp_normalization_date"/>
+                            <field property="answer_time"/>
+                            <field property="answer_date"/>
+                            <field property="answer"/>
+                        </column>
+                    </fieldGroup>
+                </tab>
+            </tabSheet>
+            <frame id="windowActions"
+                   height="100%"
+                   screen="editWindowActions"/>
+        </scrollBox>
+    </layout>
+</window>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="pandora"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.company.pandora.entity.Patient</class>
+        <class>com.company.pandora.entity.Course</class>
+        <class>com.company.pandora.entity.Therapy</class>
+        <class>com.company.pandora.entity.Surgery</class>
+        <class>com.company.pandora.entity.EarRating</class>
+        <class>com.company.pandora.entity.TreatmentRating</class>
+        <class>com.company.pandora.entity.Event</class>
+        <class>com.company.pandora.entity.Diagnosis</class>
+        <class>com.company.pandora.entity.Protocol</class>
+        <class>com.company.pandora.entity.Tc99Scintigraphy</class>
+        <class>com.company.pandora.entity.Myelogram</class>
+        <class>com.company.pandora.entity.Relapse</class>
+    </persistence-unit>
+</persistence>

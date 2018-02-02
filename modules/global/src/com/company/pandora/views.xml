@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.pandora.entity.Patient"
+          name="patientFullViewe">
+        <property name="patient_family_name"/>
+        <property name="patient_given_name"/>
+        <property name="patient_patronymic"/>
+        <property name="patient_sex"/>
+        <property name="patient_birthdate"/>
+        <property name="fnkc_request_date"/>
+        <property name="hospitalization_fnkc"/>
+        <property name="address"/>
+        <property name="diagnos"
+                  view="_minimal">
+            <property name="first_clinical_symtoms"/>
+            <property name="weight_at_birth"/>
+            <property name="risk_group_initial"/>
+            <property name="risk_group_final"/>
+            <property name="diagnosis"/>
+            <property name="tumorType"/>
+            <property name="hepar_parts"/>
+            <property name="additional_diagnosis"/>
+            <property name="mkb_10"/>
+            <property name="pretext_stage"/>
+            <property name="speigelian_lobe_affect"/>
+            <property name="hepar_out_expansion"/>
+            <property name="focal"/>
+            <property name="tumor_explosion"/>
+            <property name="remote_metastasis"/>
+            <property name="lymph_nodes_affect"/>
+            <property name="portal_vein_involve"/>
+            <property name="hepar_vein_involve"/>
+        </property>
+        <property name="therapy"
+                  view="_minimal">
+            <property name="protocol"
+                      view="_minimal">
+                <property name="value"/>
+            </property>
+            <property name="afp_initial"/>
+            <property name="hystological_type"/>
+            <property name="kt_first_tumor"/>
+            <property name="tumor_size"/>
+            <property name="initial_tumor_size"/>
+            <property name="mrt_initial_tumor"/>
+            <property name="lungs_kt"/>
+            <property name="tc99_scintigraphy"
+                      view="_minimal">
+                <property name="value"/>
+            </property>
+            <property name="myelogram"
+                      view="_minimal">
+                <property name="value"/>
+            </property>
+            <property name="operation_date"/>
+            <property name="post_text_stage"/>
+        </property>
+        <property name="event"
+                  view="_minimal">
+            <property name="event"/>
+            <property name="relapse"
+                      view="_minimal">
+                <property name="type"/>
+                <property name="value"/>
+            </property>
+            <property name="status_last_seen"/>
+            <property name="info_source"/>
+            <property name="comments"/>
+            <property name="possible_effects"/>
+        </property>
+        <property name="surgery"
+                  view="_minimal">
+            <property name="operation_influence"/>
+            <property name="affect"/>
+            <property name="address"/>
+            <property name="histology_after_operation"/>
+            <property name="treatment_patomorphism"/>
+        </property>
+        <property name="treatment"
+                  view="_minimal">
+            <property name="ear_rating"
+                      view="_minimal">
+                <property name="type"/>
+                <property name="value"/>
+            </property>
+            <property name="ear_rating_method"/>
+            <property name="afp_normalization_date"/>
+            <property name="answer_time"/>
+            <property name="answer"/>
+        </property>
+    </view>
+</views>
